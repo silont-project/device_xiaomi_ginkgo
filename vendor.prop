@@ -98,6 +98,7 @@ ro.crypto.volume.filenames_mode=aes-256-cts
 drm.service.enabled=true
 
 # Display
+debug.cpurend.vsync=false
 ro.vendor.display.sensortype=2
 
 # FM
