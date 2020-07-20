@@ -49,7 +49,7 @@ TARGET_KERNEL_CLANG_VERSION := 12.0
 KERNEL_TOOLCHAIN := $(shell pwd)/prebuilts/clang/host/linux-x86/clang-12.0/bin
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-gnu-
 TARGET_KERNEL_SOURCE := kernel/xiaomi/ginkgo
-TARGET_KERNEL_CONFIG := vendor/ginkgo-perf_defconfig
+TARGET_KERNEL_CONFIG := silont-perf_defconfig
 
 # Platform
 TARGET_BOARD_PLATFORM := trinket
