@@ -168,7 +168,7 @@ TARGET_USERIMAGES_SPARSE_EXT_DISABLED := false
 TARGET_COPY_OUT_VENDOR := vendor
 
 # Power
-TARGET_TAP_TO_WAKE_NODE := "/proc/tp_gesture"
+TARGET_TAP_TO_WAKE_NODE := "/sys/touchpanel/double_tap"
 
 # Properties
 TARGET_ODM_PROP += $(DEVICE_PATH)/odm.prop
