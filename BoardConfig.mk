@@ -51,7 +51,7 @@ SOONG_CONFIG_XIAOMI_TRINKET_INIT := DEVICE_LIB
 SOONG_CONFIG_XIAOMI_TRINKET_INIT_DEVICE_LIB := //$(DEVICE_PATH):libinit_ginkgo
 
 # Kernel
-TARGET_KERNEL_CONFIG := vendor/ginkgo-perf_defconfig
+TARGET_KERNEL_CONFIG := silont-perf_defconfig
 
 # NFC
 TARGET_USES_NQ_NFC := true
