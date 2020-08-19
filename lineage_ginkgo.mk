@@ -25,6 +25,9 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 # Inherit from ginkgo device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
+# Inherit Miui Camera port only if present
+$(call inherit-product-if-exists, vendor/miuicamera/common/common-vendor.mk)
+
 PRODUCT_BRAND := Xiaomi
 PRODUCT_DEVICE := ginkgo
 PRODUCT_MANUFACTURER := Xiaomi
