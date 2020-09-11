@@ -94,6 +94,10 @@ USE_DEVICE_SPECIFIC_CAMERA := true
 # Charger Mode
 BOARD_CHARGER_ENABLE_SUSPEND := true
 
+# CHRE
+CHRE_DAEMON_ENABLED := true
+CHRE_DAEMON_USE_SDSPRPC := true
+
 # Dexpreopt
 ifeq ($(HOST_OS),linux)
 ifneq ($(TARGET_BUILD_VARIANT),eng)
