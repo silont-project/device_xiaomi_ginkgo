@@ -1968,9 +1968,6 @@ vendor/etc/init/vendor.qti.hardware.qdutils_disp@1.0-service-qti.rc
 vendor/lib/vendor.qti.hardware.qdutils_disp@1.0.so
 vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
 
-# QTI Telephony - from DRG - QKQ1.190828.002
-product/framework/qti-telephony-common.jar|b4d187700f279cdbd40e74b4c3be4504f10d8b29
-
 # Radio
 -product/app/QtiTelephonyService/QtiTelephonyService.apk
 -product/app/atfwd/atfwd.apk
