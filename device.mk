@@ -26,6 +26,12 @@ PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
+# Hals namespaces
+PRODUCT_SOONG_NAMESPACES += \
+    hardware/qcom-caf/sm8150/display \
+    hardware/qcom-caf/sm8150/audio \
+    hardware/qcom-caf/sm8150/media
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.low_latency.xml \
