@@ -53,7 +53,7 @@ void property_override(string prop, string value)
 void vendor_load_properties()
 {
     string device, model, desc;
-    string fp = "google/coral/coral:11/RP1A.200720.009/6720564:user/release-keys";
+    string fp = "xiaomi/ginkgo/ginkgo:10/QKQ1.200114.002/20.9.15:user/release-keys";
 
     string region = GetProperty("ro.boot.hwc", "");
     string hwversion = GetProperty("ro.boot.hwversion", "");
