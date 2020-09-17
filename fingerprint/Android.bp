@@ -21,7 +21,6 @@ cc_binary {
     srcs: ["service.cpp", "BiometricsFingerprint.cpp"],
     shared_libs: [
         "libbase",
-        "libhardware",
         "libhidlbase",
         "liblog",
         "libhardware",
