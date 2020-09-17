@@ -56,9 +56,6 @@ TARGET_KERNEL_CONFIG := silont-perf_defconfig
 TARGET_BOARD_PLATFORM := trinket
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno610
 
-# APEX
-DEXPREOPT_GENERATE_APEX_IMAGE := true
-
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
 
