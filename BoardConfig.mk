@@ -49,12 +49,13 @@ BOARD_RAMDISK_OFFSET := 0x01000000
 BOARD_KERNEL_SEPARATED_DTBO := true
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_CLANG_COMPILE := true
-TARGET_KERNEL_CLANG_VERSION := silont
-KERNEL_TOOLCHAIN := $(shell pwd)/prebuilts/clang/host/linux-x86/clang-silont/bin
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-gnu-
-TARGET_KERNEL_ADDITIONAL_FLAGS := AS=llvm-as AR=llvm-ar NM=llvm-nm OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump STRIP=llvm-strip
+#TARGET_KERNEL_CLANG_VERSION := silont
+#KERNEL_TOOLCHAIN := $(shell pwd)/prebuilts/clang/host/linux-x86/clang-silont/bin
+#TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-gnu-
+#TARGET_KERNEL_ADDITIONAL_FLAGS := AS=llvm-as AR=llvm-ar NM=llvm-nm OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump STRIP=llvm-strip
 TARGET_KERNEL_SOURCE := kernel/xiaomi/ginkgo
 TARGET_KERNEL_CONFIG := silont-perf_defconfig
+TARHET_USE_LATEST_CLANG := true
 
 # Platform
 TARGET_BOARD_PLATFORM := trinket
@@ -79,7 +80,7 @@ BOARD_SUPPORTS_QAHW := false
 BOARD_SUPPORTS_SOUND_TRIGGER := true
 BOARD_USES_ALSA_AUDIO := true
 TARGET_USES_QCOM_MM_AUDIO := true
-USE_CUSTOM_AUDIO_POLICY := 1
+#USE_CUSTOM_AUDIO_POLICY := 1
 USE_XML_AUDIO_POLICY_CONF := 1
 
 # Broken Headers
@@ -204,20 +205,26 @@ VENDOR_SECURITY_PATCH := 2020-09-01
 
 # Sepolicy
 TARGET_SEPOLICY_DIR := trinket
-include device/qcom/sepolicy/sepolicy.mk
-BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
-BOARD_PLAT_PUBLIC_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/public
-BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
+#include device/qcom/sepolicy/sepolicy.mk
+#BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
+#BOARD_PLAT_PUBLIC_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/public
+#BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
+BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy-minimal
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
-BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flag 2
+BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flag 2 --set_hashtree_disaled_flag
+BOARD_AVB_RECOVERY_KEY_PATH := external/avb/test/data/testkey_rsa4096.pem
+BOARD_AVB_RECOVERY_ALGORITHM := SHA256_RSA4096
+BOARD_AVB_RECOVERY_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
+BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 2
 
 # Treble
 BOARD_VNDK_VERSION := current
 BOARD_VNDK_RUNTIME_DISABLE := true
 
 # WiFi
+BOARD_USES_AOSP_WLAN_HAL := true
 BOARD_WLAN_DEVICE := qcwcn
 BOARD_HOSTAPD_DRIVER := NL80211
 BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)

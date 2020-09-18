@@ -213,9 +213,6 @@ PRODUCT_PACKAGES += \
     libqcomfm_jni \
     qcom.fmradio
 
-PRODUCT_BOOT_JARS += \
-    qcom.fmradio
-
 PRODUCT_PACKAGES += \
     android.hardware.broadcastradio@1.0-impl
 
@@ -443,9 +440,6 @@ PRODUCT_PACKAGES += \
     qti_telephony_hidl_wrapper.xml \
     qti-telephony-utils \
     qti_telephony_utils.xml \
-    telephony-ext
-
-PRODUCT_BOOT_JARS += \
     telephony-ext
 
 # TextClassifier
