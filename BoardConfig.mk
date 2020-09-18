@@ -36,7 +36,7 @@ TARGET_RECOVERY_DEVICE_MODULES := libinit_ginkgo
 
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/xiaomi/ginkgo
-TARGET_KERNEL_CONFIG := vendor/ginkgo-perf_defconfig
+TARGET_KERNEL_CONFIG := silont-perf_defconfig
 BOARD_VENDOR_KERNEL_MODULES += \
     $(DEVICE_PATH)/kernel-modules/rmnet_perf.ko \
     $(DEVICE_PATH)/kernel-modules/rmnet_shs.ko

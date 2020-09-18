@@ -23,8 +23,14 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 # Inherit from ginkgo device
 $(call inherit-product, device/xiaomi/ginkgo/device.mk)
 
+# Inherit some common RevengeOS stuff.
+$(call inherit-product, vendor/revengeos/config/common.mk)
+
+# Boot Animation res
+TARGET_BOOT_ANIMATION_RES := 1080
+
 # Device identifier
-PRODUCT_NAME := aosp_ginkgo
+PRODUCT_NAME := revengeos_ginkgo
 PRODUCT_DEVICE := ginkgo
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi Note 8
@@ -32,7 +38,7 @@ PRODUCT_MANUFACTURER := Xiaomi
 
 # Fingerprint
 BUILD_FINGERPRINT := google/coral/coral:11/RP1A.200720.009/6720564:user/release-keys
-BUILD_DESCRIPTION := coral-user 10 RP1A.200720.009 6720564 release-keys
+BUILD_DESCRIPTION := "coral-user 10 RP1A.200720.009 6720564 release-keys"
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.fingerprint=$(BUILD_FINGERPRINT)
